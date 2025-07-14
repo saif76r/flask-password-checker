@@ -1,1 +1,34 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Password Strength Checker</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 30px; background: #f0f0f0; }
+        .container { max-width: 400px; margin: auto; background: white; padding: 20px; border-radius: 8px; }
+        input[type="password"] { width: 100%; padding: 8px; margin-bottom: 10px; }
+        button { padding: 8px 15px; }
+        .result { font-weight: bold; margin-top: 15px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Password Strength Checker</h2>
+        <form method="post">
+            <input
+                type="password"
+                name="password"
+                placeholder="Enter your password"
+                required
+                value="{{ password }}"
+            />
+            <button type="submit">Check</button>
+        </form>
+
+        {% if strength %}
+        <div class="result">Strength: {{ strength }}</div>
+        {% endif %}
+    </div>
+</body>
+</html>
